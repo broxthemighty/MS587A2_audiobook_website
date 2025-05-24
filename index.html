@@ -1,0 +1,84 @@
+<!-- ===============================================
+     Matt Lindborg
+     UAT MS587 Week 1 Assignment 2.1
+     AI eBook & Audiobook Library - Static Homepage
+     Purpose: Lists all eBooks with links to read, generate audio, or listen
+     Notes:
+     - Fixed background from 'images/back.jpg'
+     - Each book links to read and listen pages
+     - Audio must be generated first using generate_audio.py
+     =============================================== -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI eBook Library</title>
+    <link rel="stylesheet" href="static/styles.css">
+    <style>
+        body {
+            background: url("static/images/back.jpg") no-repeat center center fixed;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📘 AI eBook & Audiobook Library</h1>
+        <p>Matt Lindborg UAT MS587 Week 2 Assignment 2.1</p>
+        <p>Github url for this site: placeholder</p>
+        <p>Select a story to read or generate/listen to audio. Run <code>generate_audio.py</code> to create MP3s if not already generated.</p>
+        <div class="book-list">
+            <!-- List of eBooks in the static library -->
+            <div class="book-card">
+                <h3>Warhammer 40,000 Orks</h3>
+                <div class="actions">
+                    <a href="read_book.html?file=warhammer_40,000_orks.txt">📖 Read</a>
+                    <a href="audio_player.html?file=warhammer_40,000_orks.mp3">🔊 Listen</a>
+                </div>
+            </div>
+            <div class="book-card">
+                <h3>Warhammer 40,000 Space Marine</h3>
+                <div class="actions">
+                    <a href="read_book.html?file=warhammer_40,000_space_marine.txt">📖 Read</a>
+                    <a href="audio_player.html?file=warhammer_40,000_space_marine.mp3">🔊 Listen</a>
+                </div>
+            </div>
+            <div class="book-card">
+                <h3>Space Adventure</h3>
+                <div class="actions">
+                    <a href="read_book.html?file=book1_space_adventure.txt">📖 Read</a>
+                    <a href="audio_player.html?file=book1_space_adventure.mp3">🔊 Listen</a>
+                </div>
+            </div>
+            <div class="book-card">
+                <h3>Jungle Mystery</h3>
+                <div class="actions">
+                    <a href="read_book.html?file=book2_jungle_mystery.txt">📖 Read</a>
+                    <a href="audio_player.html?file=book2_jungle_mystery.mp3">🔊 Listen</a>
+                </div>
+            </div>
+            <div class="book-card">
+                <h3>Ancient Egypt</h3>
+                <div class="actions">
+                    <a href="read_book.html?file=book3_ancient_egypt.txt">📖 Read</a>
+                    <a href="audio_player.html?file=book3_ancient_egypt.mp3">🔊 Listen</a>
+                </div>
+            </div>
+            <div class="book-card">
+                <h3>Robot Rebellion</h3>
+                <div class="actions">
+                    <a href="read_book.html?file=book4_robot_rebellion.txt">📖 Read</a>
+                    <a href="audio_player.html?file=book4_robot_rebellion.mp3">🔊 Listen</a>
+                </div>
+            </div>
+            <div class="book-card">
+                <h3>Underwater City</h3>
+                <div class="actions">
+                    <a href="read_book.html?file=book5_underwater_city.txt">📖 Read</a>
+                    <a href="audio_player.html?file=book5_underwater_city.mp3">🔊 Listen</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

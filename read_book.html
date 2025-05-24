@@ -1,0 +1,56 @@
+<!-- ===============================================
+     Read Book Page
+     Purpose: Displays the content of a .txt file based on query param
+     Note: Requires JS to dynamically fetch text content
+     =============================================== -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Read: AI eBook</title>
+    <link rel="stylesheet" href="static/styles.css">
+    <style>
+        body {
+            background: url("static/images/back.jpg") no-repeat center center fixed;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 id="book-title">📖 AI eBook</h2>
+
+        <div class="book-content">
+            <pre id="book-text">
+Loading story content...
+            </pre>
+        </div>
+
+        <br>
+        <a href="index.html" class="back-link">⬅ Back to Library</a>
+    </div>
+
+    <script>
+        // ===============================================
+        // JS logic to load .txt file content from query param
+        // ===============================================
+        const params = new URLSearchParams(window.location.search);
+        const file = params.get('file');
+        const title = file ? file.replace('.txt', '').replace(/_/g, ' ') : 'Unknown';
+
+        document.getElementById('book-title').innerText = `📖 ${title}`;
+
+        fetch(`ebooks/${file}`)
+            .then(response => {
+                if (!response.ok) throw new Error('File not found');
+                return response.text();
+            })
+            .then(text => {
+                document.getElementById('book-text').innerText = text;
+            })
+            .catch(err => {
+                document.getElementById('book-text').innerText = "⚠️ Failed to load the story.";
+            });
+    </script>
+</body>
+</html>
